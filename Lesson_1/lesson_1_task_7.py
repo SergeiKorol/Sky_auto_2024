@@ -1,44 +1,42 @@
-# Задание 7. Вызов функций
-# Создать 10 функций на вывод каждой цифры и вывести их определённом порядке
-def f1():
-    print('1', end=' ')
+# Задание 8. Параметризация функций
+# Создаю функцию принимающую на вход параметр num
+def number(num):
+    print(num, end=' ')
 
-def f2():
-    print('2', end=' ')
+# Вариант 1 Вызываю функцию для вывода значения 88005553535
+num = 8
+number(num)
+num = 8
+number(num)
+num = 0
+number(num)
+num = 0
+number(num)
+num = 5
+number(num)
+num = 5
+number(num)
+num = 5
+number(num)
+num = 3
+number(num)
+num = 5
+number(num)
+num = 3
+number(num)
+num = 5
+number(num)
 
-def f3():
-    print('3', end=' ')
+# Вариант 2 Вызываю функцию для вывода значения 88005553535
 
-def f4():
-    print('4', end=' ')
-
-def f5():
-    print('5', end=' ')
-
-def f6():
-    print('6', end=' ')
-
-def f7():
-    print('7', end=' ')
-
-def f8():
-    print('8', end=' ')
-
-def f9():
-    print('9', end=' ')
-
-def f0():
-    print('0', end=' ')
-
-# Вызываю функции для печати значения 88005553535
-f8() 
-f8() 
-f0() 
-f0() 
-f5() 
-f5() 
-f5() 
-f3() 
-f5() 
-f3() 
-f5() 
+number(8)
+number(8)
+number(0)
+number(0)
+number(5)
+number(5)
+number(5)
+number(3)
+number(5)
+number(3)
+number(5)
