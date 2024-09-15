@@ -7,6 +7,7 @@ def is_year_leap(year):
     else:
         return False
 
-# Проверяю что функция правильно определяет високосный год или нет 2024 - високосный, 2023 не високосный
-print('Год 2023:', is_year_leap(2023))
-print('Год 2024:', is_year_leap(2024))
+# Вызываю функцию
+year = int(input("Введите год для проверки високосности "))
+print(f'год {year}:', is_year_leap(year))
+
