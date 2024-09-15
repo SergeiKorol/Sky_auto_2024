@@ -11,9 +11,11 @@ def month_to_season(month_num):
         season = 'Лето'
     elif month_num in (9, 10, 11):
         season = 'Осень'
-    else: season = 'Введено число > 12'
+    else:
+        season = 'Введено число > 12'
     return season
 
-# Вызываю функцию 
+
+# Вызываю функцию
 month_num = int(input("Введите номер месяца "))
 print('Время года:', month_to_season(month_num))
