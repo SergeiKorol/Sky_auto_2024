@@ -1,7 +1,10 @@
 from selenium.webdriver.common.by import By
+from test_data import *
 
 
 class MainPage:
+    def __init__(self, driver):
+        self._driver = driver
     # Локаторы для основной страницы    
     first_name_locator = "input[name='first-name']"
     last_name_locator = "input[name='last-name']"
@@ -17,24 +20,19 @@ class MainPage:
     web_elements = ""
     red_color = "rgba(132, 32, 41, 1)"
     green_color = "rgba(15, 81, 50, 1)"
+    URL = "https://bonigarcia.dev/selenium-webdriver-java/data-types.html"
 
-    # Конструктор 
-    def __init__(self, driver):
-        self._driver = driver
-        self._driver.get('https://bonigarcia.dev/selenium-webdriver-java/data-types.html')
-        self._driver.maximize_window()
-    
     def fill_fields(self):
-        self._driver.find_element(By.CSS_SELECTOR, self.first_name_locator).send_keys("Петр")
-        self._driver.find_element(By.CSS_SELECTOR, self.last_name_locator).send_keys("Иванов")
-        self._driver.find_element(By.CSS_SELECTOR, self.address_locator).send_keys("Советсткая, 1")
-        self._driver.find_element(By.CSS_SELECTOR, self.email_locator).send_keys("testemail@ya.ru")
-        self._driver.find_element(By.CSS_SELECTOR, self.phone_locator).send_keys("+76543210987")
-        self._driver.find_element(By.CSS_SELECTOR, self.zip_locator).send_keys("")
-        self._driver.find_element(By.CSS_SELECTOR, self.city_locator).send_keys("Киров")
-        self._driver.find_element(By.CSS_SELECTOR, self.country_locator).send_keys("Россия")
-        self._driver.find_element(By.CSS_SELECTOR, self.job_locator).send_keys("Профессор кислых щщей")
-        self._driver.find_element(By.CSS_SELECTOR, self.company_locator).send_keys("Мелко_Мягк")
+        self._driver.find_element(By.CSS_SELECTOR, self.first_name_locator).send_keys(first_name)
+        self._driver.find_element(By.CSS_SELECTOR, self.last_name_locator).send_keys(last_name)
+        self._driver.find_element(By.CSS_SELECTOR, self.address_locator).send_keys(address)
+        self._driver.find_element(By.CSS_SELECTOR, self.email_locator).send_keys(email)
+        self._driver.find_element(By.CSS_SELECTOR, self.phone_locator).send_keys(phone)
+        self._driver.find_element(By.CSS_SELECTOR, self.zip_locator).send_keys(zip)
+        self._driver.find_element(By.CSS_SELECTOR, self.city_locator).send_keys(city)
+        self._driver.find_element(By.CSS_SELECTOR, self.country_locator).send_keys(country)
+        self._driver.find_element(By.CSS_SELECTOR, self.job_locator).send_keys(job)
+        self._driver.find_element(By.CSS_SELECTOR, self.company_locator).send_keys(company)
 
     def is_first_name(self):
         first_name_color = self.web_elements[3].find_element(By.CSS_SELECTOR, "#first-name").value_of_css_property("color")

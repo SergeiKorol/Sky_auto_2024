@@ -1,11 +1,10 @@
-from selenium import webdriver
 from MainPage import MainPage
+from Lesson_7.conftest.conftest import chrome_browser
 
 
-def test_full():
-    
-    driver = webdriver.Chrome()
-    main_page = MainPage(driver)
+def test_full(chrome_browser):
+    chrome_browser.get(MainPage.URL)
+    main_page = MainPage(chrome_browser)
     main_page.fill_fields()
     main_page.submit()
 
@@ -20,4 +19,3 @@ def test_full():
     assert main_page.is_job()
     assert main_page.is_company()
 
-    driver.close()
